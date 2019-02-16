@@ -1,3 +1,613 @@
+
+
+// -- Imports Urls-- // 
+@import url(https://fonts.googleapis.com/css?family=Dosis:300,400);
+
+
+// -- Vars -- //
+$color: #fff;		  // icon color
+$pastelgreen:  #70DA92;	  // background color
+$animation: 0.6s;	// animation speed
+$scale: 1;			  // icon scale 68/68 default
+
 page-home {
 
+    *{ box-sizing: border-box; }
+
+    // -- reset all parameters -- //
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  
+
+    /* -- header hamburguer botton menu -- */
+      #hamburger {
+        display: none;
+      }
+
+     .menuIcon{
+      width: 30px;
+      height: 25px;
+      float: right;
+      position: relative;
+      margin-top: 5px;
+      
+     }
+
+    .menuicon {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: block;
+      cursor: pointer;
+      height: 21px;
+      width: 25px;
+      
+      }
+
+      .menuicon span, .menuicon span::after, .menuicon span::before{
+      display: block;
+      width: 22px;
+      height: 3px;
+      border-radius: 15px;
+      background-color: white;
+      box-shadow: 0.08em 0.08em #999;
+      }
+
+      .menuicon span {
+      top: 8px;
+      position: relative;
+      -webkit-transition-duration: 0;
+      -moz-transition-duration: 0;
+      -ms-transition-duration: 0;
+      -o-transition-duration: 0;
+      -webkit-transition-delay: 0.1s;
+      -moz-transition-delay: 0.1s;
+      -ms-transition-delay: 0.1s;
+      -o-transition-delay: 0.1s;
+      transition-delay: 0.1s;
+    
+     
+      }
+
+      .menuicon span::after, .menuicon span::after, .menuicon span::before {
+      
+      content: '';
+      position: absolute;
+      -webkit-transition-property: margin, -webkit-transform;
+      -webkit-transition-duration: 0.1s;
+      -moz-transition-duration: 0.1s;
+      -ms-transition-duration: 0.1s;
+      -o-transition-duration: 0.1s;
+      transition-duration: 0.1s;
+      -webkit-transition-delay: 0.1s;
+      -moz-transition-delay: 0.1s;
+      -ms-transition-delay: 0.1s;
+      -o-transition-delay: 0.1s;
+      transition-delay: 0.1s;
+      
+      }
+      
+      .menuicon span::before {
+        margin-top: -8px;
+       
+      }
+      
+      .menuicon span::after {
+        margin-top: 8px;
+       
+      }
+
+      #hamburger:checked ~ .menuicon span {
+      background-color: transparent;
+      }
+
+      #hamburger:checked ~ .menuicon span::before, #hamburger:checked ~ .menuicon span::after {
+      margin-top: 0px;
+      }
+
+      #hamburger:checked ~ .menuicon span::before {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      }
+
+      #hamburger:checked ~ .menuicon span::after {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+          
+      }
+
+      #hamburger:checked ~ .option{
+        transform: translateX(0%);
+      }
+
+    /* -- header hamburguer botton menu -- */
+
+   /* navegation-menu on headder */
+      .option{
+        position: absolute;
+        width: 100%;
+        height: 35vh;
+        //background-color: #888 ;
+        top: 0px;
+        left: 0;
+        transition: all 0.5s;
+        transform: translateX(-120%);
+      }
+
+
+      .option a{
+        color:white;
+        top: 10px;
+        left: 15px;
+        text-decoration: none;
+        padding: 15px;
+        transition: width 0.5s;
+        display: block;
+        position: relative;
+        padding: .75rem 1rem 1rem;
+        border-radius: 0px 10px 10px 10px;
+        
+        -webkit-transition: -webkit-transform .22s,box-shadow .22s;
+        transition: transform .22s,box-shadow .22s;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        
+        box-shadow: 0 0 0 -.25rem rgba(0,0,0, 0.3);
+      }
+      
+     .option a:focus,  .option a:hover {
+        outline: 0;
+        box-shadow: 0 .5rem 0 -.25rem rgba(0,0,0, 0.3);
+        opacity: 1;
+        -webkit-transform: scale(1.08);
+        transform:scale(1.08);
+        -webkit-transition: -webkit-transform .088s,box-shadow .088s;
+        transition: transform .088s,box-shadow .088s;
+        z-index: 1;
+        color:$pastelgreen;
+      }
+
+     .option a:nth-child(1) {
+        background: #555; //#95c5db;
+      }
+     .option a:nth-child(2) {
+        background: #555; //#94c1db;
+      }
+     .option a:nth-child(3) {
+        background: #555; //#94bddb;
+      }
+     .option a:nth-child(4) {
+        background: #555; //#94b9db;
+      }
+     .option a:nth-child(5) {
+        background: #555; //#94b5db;
+      }
+     .option a:nth-child(6) {
+        background: #555; //#94b2db;
+      }
+      
+      .option a:nth-child(6):hover {
+        cursor: pointer;
+      }
+
+      .animated {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+      }
+
+   /* navegation-menu on headder */
+
+    .appIcon{
+      font-family: 'Pacifico', cursive;
+      color: white;
+      background-color: $pastelgreen;
+      height: 30px;
+      width: 30%;
+      margin-top: 10px;
+      float: left;
+      position:relative;
+      text-shadow: 0.1em 0.1em #999;
+    }
+  
+    .logScrn{
+    	width: 100%;
+    	height: 150%;
+    	background-color: transparent;
+      position: absolute;
+      top: 0;
+    }
+
+    .header{
+    	padding: 0;
+   		background-color: $pastelgreen; // aqui van los iconos inicio - menu 
+   		width: 100%;
+   		height: 10%;
+   		position: initial;
+   	}
+
+	.topScrn{
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		height: 40%;
+		background-color: #70DA92;
+		position: relative;
+	}
+    
+	h2{
+		 color: white;
+		 padding-top: 15%;
+     text-align: center;
+     font-family: 'Noto Sans KR', sans-serif;
+     text-shadow: 0.01em 0.1em #999;
+	}
+
+	h6{
+		color: white;
+		text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-shadow: 0.01em 0.1em #999;
+	}
+
+	section.textLogTop{
+		background-color: white;  // cambiar a blanco #f5f6f9
+		width: 90%;
+		height: 45%;
+		margin-left: 5%;
+		margin-right: auto;
+		margin-top: 15%;
+		border-radius: 3% 3% 0% 0%;
+	}
+
+	.bottomScrn{
+		padding: 0;
+		background-color: #E1E8F0; 
+		width: 100%;
+		height: 80%;
+		top: 0;
+		position: relative;
+	}
+
+	section.textLogBottom{
+		background-color: white; // cambiar a blanco #f5f6f9
+		width: 90%;
+		height: 50%;
+		margin-left: 5%;
+		margin-right: auto;
+		border-radius: 0% 0% 3% 3%;
+	}
+
+	.text{
+     font-family: 'Noto Sans KR', sans-serif;
+     text-align: center;
+    }
+
+  .forgot{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 10px;
+    padding: left;
+  }
+
+  	.user{
+      width: 100%;
+      height: 40px;
+      border-radius: 10px;
+      border-top:    solid 2px #70DA92;
+      border-left:   solid 2px #70DA92;
+      border-bottom: solid 2px #70DA92;
+      border-right:  solid 2px #70DA92;
+  	}
+
+  	.user:hover{
+  		 border: solid 2px #F52847;
+  	}
+
+    .passText{
+      margin-left: 15%;
+      float:left;
+      width: 65%;
+    }
+
+    .eye-view-div{
+       width: 20%;
+       height: 20%;
+       float: right;
+       position: relative;
+       margin-bottom: 5%;
+       margin-top: 2%;
+    }
+
+    .eye-view-img{
+      width: 25px;
+      height: 25px;
+      margin-top: 5%;
+      margin-left: 35%;
+    }
+
+    .password:hover{
+        border-top:    solid 2px  #F52847;
+        border-left:   solid 2px  #F52847;
+        border-bottom: solid 2px  #F52847;
+        border-right:  solid 2px  #F52847;
+  	}
+    
+    .passwordInput{
+      float: left;
+    }
+
+
+    
+    a.forgot:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        display: inline-block;
+        height: 1em;
+        width: 100%;
+        border-bottom: 1px solid;
+        margin-top: 10px;
+        opacity: 0;
+        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+        transition: opacity 0.35s, transform 0.35s;
+        -webkit-transform: scale(0,1);
+        transform: scale(0,1);
+    }
+
+
+
+    a.forgot{
+        color: black;
+        font-size: 12px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10%;
+        left: 22%;
+        position: relative;
+        font-family: 'Dosis', sans-serif;
+    }
+
+    a.forgot:hover{
+      color: #F52847;
+    }
+
+    a.forgot:hover:after {
+
+      color: #F52847; 
+      opacity:  1;
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+
+    .Sign-button{
+      width: 100%;
+      height: 15%;
+      margin-left: 1%;
+      margin-top: 20%;
+      border-radius: 25px;
+      background-color: #F52847;
+      text-align: center;
+      font-size: 16px;
+      font-family: 'Dosis', sans-serif;
+      position: relative;
+    }
+
+    .arrow{
+        cursor: pointer;
+        height: 120px;
+        left: 30%;
+        position: absolute;
+        top: 45%;
+        transform: translateX(-50%) translateY(-50%);
+        transition: transform .1s;
+        width: 10px;
+  
+        &-top,
+        &-bottom {
+          background-color: #111;
+          height: 3px;
+          left: -5px;
+          position: absolute;
+          top: 50%;
+          width: 100%;
+  
+        }
+  
+        &-top {
+          transform: rotate(45deg);
+          transform-origin: bottom right;
+          
+        }
+  
+        &-bottom {
+          transform: rotate(-45deg);
+          transform-origin: top right;
+        }
+  }
+
+   .sesion a{
+    margin-left: 6%;
+    padding-top: 3%;
+    font-family: 'Dosis', sans-serif;
+    font-size: 18px;
+    color: black;
+  }
+
+  .sesion a:hover{
+    color: #555;
+    transition:  .15s;
+
+    .arrow-top,
+    .arrow-bottom {
+      background-color: #555;
+      height: 3px;
+      left: -5px;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+
+    }
+
 }
+
+  
+  .Sign-button:hover{
+      .sesion{
+          color: #555;
+          transition:  .15s;
+      }
+        .arrow-top,
+        .arrow-bottom {
+            background-color: #555;
+            height: 3px;
+            left: -5px;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+        }
+  }
+ 
+    .bottonAccount{
+    	width: 65%;
+    	height: 50%;
+    	margin-left: 18%;
+    	margin-top: 2%;
+    	border-radius: 25px;
+    	background-color: #f4f5f8;
+    	text-align: center;
+    }
+
+    a{
+    	color: #0ec254;
+    	font-size: 16px;
+  		text-decoration: none;
+  		display: inline-block;
+  		margin-top: 1%;
+  		position: relative;
+  		font-family: 'Dosis', sans-serif;
+  	}
+
+    /*effect-underline*/
+	a.effect-underline:after {
+			content: '';
+  			position: absolute;
+  			left: 0;
+  			display: inline-block;
+  			height: 1em;
+  			width: 100%;
+  			border-bottom: 1px solid;
+ 			  margin-top: 3px;
+  			opacity: 0;
+				-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+				transition: opacity 0.35s, transform 0.35s;
+				-webkit-transform: scale(0,1);
+				transform: scale(0,1);
+    }
+
+    a.effect-underline:hover:after {
+ 			opacity: 1;
+		    -webkit-transform: scale(1);
+	        transform: scale(1);
+    }
+
+    /* -- footer --*/
+    .footer{
+      margin-top: 30%;
+      width: 100%;
+      height: 40%;
+      background-color: white;
+    }
+
+    .appName_back_to_up{
+       width: 100%;
+       height: 40px;
+       // background-color: red;  div al lado de homegloo
+     }
+
+    .apptextName{
+     width: 30%;
+     height: 40px;
+     //background-color: #999;  // gris homegloo
+     font-family: 'Pacifico', cursive;
+     text-align: center;
+   
+    }
+
+    .textApp{
+      margin-left: 5%;
+      padding-top: 10%;
+    }
+
+    .content_bottom{
+        width: 100%;
+        height: 50%;
+       // background-color: #777;  Gris contenido de bottom
+    }
+
+    .contact_icons{
+      margin-left: 18%;
+      margin-right: auto;
+    }
+
+    #twitter{
+      padding-left: 5%;
+    }
+
+    #google{
+     padding-left: 5%;
+    }
+
+    #github{
+     padding-left: 5%;
+    }
+
+    #youtube{
+     padding-left: 5%;
+    }
+    
+    #pinterest{
+     padding-left: 5%;
+    }
+
+    #linkedin{
+     padding-left: 5%;
+    }
+    
+
+
+
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 100%;
+    }
+
+    @media only screen and (min-width: 600px) {
+      /* For tablets: */
+
+        display: inline-block !important;
+    }
+    @media only screen and (min-width: 768px) {
+      /* For desktop: */
+
+    }
+
+}
+
+
+/*
+The style of home - login page it is from toggl web page
+Arrow for login session is from CodePen - code written by Hektor Wallin
+*/ 
