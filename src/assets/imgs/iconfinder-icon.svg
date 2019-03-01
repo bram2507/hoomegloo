@@ -1,0 +1,15 @@
+<svg width="250" height="148" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <circle stroke-miterlimit="100" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7" stroke="#ffffff" fill="none" id="svg_2" r="15.34377" cy="24" cx="24" class="st1"/>
+  <path stroke-miterlimit="100" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7" stroke="#ffffff" fill="none" id="svg_4" d="m21.45114,11.57075c0.53679,-0.09549 1.07644,-0.1576 1.61342,-0.18429" class="st1"/>
+  <path stroke-miterlimit="100" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7" stroke="#ffffff" fill="#fcfcfc" id="svg_5" d="m15.02626,14.75953c1.44125,-1.2413 3.22635,-2.35482 5.10565,-2.8855" class="st1"/>
+  <circle stroke="#ffffff" transform="rotate(4.074318885803223 24,21.01823043823241) " stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7" fill="none" id="svg_7" r="4.46602" cy="21.01823" cx="24" class="st1"/>
+  <path stroke-miterlimit="100" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.7" stroke="#ffffff" fill="none" id="svg_8" d="m16.33997,31.44779c0,-2.39159 1.95675,-4.34834 4.34834,-4.34834l6.62337,0c2.39159,0 4.34834,1.95675 4.34834,4.34834" class="st1"/>
+ </g>
+</svg>

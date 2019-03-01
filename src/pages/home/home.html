@@ -6,12 +6,10 @@
 </head>
 <body>
 <ion-content>
-    <ion-grid>
-
-    </ion-grid>    
-    
+   
     <div class="logScrn">
-        <!-- Headder of the page -->
+
+    <!-- Headder of the page [ Hamburger Menu and LogoText ] -->
         <div class="header" padding>
             <div class="appIcon">[ homegloo ]</div>
             <div class="menuIcon">
@@ -21,82 +19,114 @@
                     </label>      
             </div>
         </div>
-        <!-- Headder of the page -->
-        
-        <!-- Top of the page -->
-        <div class="topScrn">
+    <!-- Headder of the page -->
 
-            <!-- Section of Wellcome text -->
-            <section class="textP" padding>
-                <h2 align="text-center">Comenzar</h2>
-                <h6 align="text-center">Inicia sesión en Homegloo</h6>     
-            </section>
-            <!-- Section of Wellcome text -->
+    <!-- Acess granted or not to  the home Initial Page  -->
+    <div id="accessTo" class="acess">
+       <div class="spinner">
+         <div class="double-bounce1"></div>
+         <div class="double-bounce2"></div>
+       </div>
+    </div>
 
-            <!-- Menu transition when hamburguer is clicked -->
-            <nav id="nav" class="option"> 
-                <a href="#">Iniciar Sesión</a>
-                <a href="#">Cambiar Email o Usuario</a>
-                <a href="#">Cambiar Contraseña</a>
-                <a href="#">Contacto</a>  
-            </nav>     
-            <!-- Menu transition when hamburguer is clicked -->
-         
-            <!-- Section of the Email -->
-            <section class="textLogTop" padding>
-                <ion-label fixed color="dark">Email</ion-label>
-                <div class="user">
-                    <ion-input class="emailInput" type="text" maxlength="25" text-center placeholder="Email">
-                    </ion-input>
-                </div>
-            </section>
-            <!-- Section of the Email -->
+    <!-- Top of the page [ Email and Password -Log in ] -->
+        <div class="topScrn" >
+          
+                <!-- Section of Wellcome text -->
+                <section class="textP">
+                    <h2 align="text-center">Comenzar</h2>
+                    <h6 align="text-center">Inicia sesión en Homegloo</h6>     
+                </section>
+                <!-- Section of Wellcome text -->
+
+                <!-- Menu transition when hamburguer is clicked -->
+                <nav id="nav" class="option"> 
+                    <a href="#">Iniciar Sesión</a>
+                    <a href="#">Cambiar Email</a>
+                    <a href="#">Cambiar Contraseña</a>
+                    <a href="#">Cerrar</a>  
+                </nav>     
+                <!-- Menu transition when hamburguer is clicked -->
         </div>
-        <!-- Top of the page -->
+    <!-- Top of the page -->  
 
-        <!-- Bottom of the page -->
-        <div class="bottomScrn">
-            
-            <!-- Section of the Password -->
-            <section class="textLogBottom" padding>
-                <ion-label fixed color="dark" align-self-center>Password</ion-label>
-                <div class="user">
-                    <div class="passText">
+    <!-- Mid of Page  -->
+        <div class="MidScrn" id="body">
+                <!-- <section> class="Email"> -->
+                    <section class="Email" >
+                            <ion-label fixed color="dark">Email</ion-label>
+                            
+                            <div [formGroup]="group" class="user" id="input1">
 
-                        <ion-input class="passwordInput" maxlength="32" text-center placeholder="Password"
-                            [type]="passwordType">
-                        </ion-input>
-                    </div>
-                    <div class="eye-view-div" id="eye" (click)="tooglePassword($event.target)">
-                        <img id="eye-closed-img" class="eye-view-img"
-                            src="../assets/imgs/ionicons-svg-md-eye-off.svg">
-                    </div>
-                </div>
-                <div>
-                    <a class="forgot" href="#">¿Has olvidado tu contraseña?</a>
-                </div>
+                                <ion-input formControlName="UserName" email="true" id="email" [(ngModel)]="inputEmail" class="emailInput" type="text" maxlength="25" text-center placeholder="Email" (click)="errEmail()">
+                                </ion-input>
+                            </div>
 
-                <div class="Sign-button" href="#">
-                    <div class="arrow">
-                        <div class="arrow-top"></div>
-                        <div class="arrow-bottom"></div>
-                    </div>
-                    <div class="sesion"><a href="#">Iniciar Sesión</a></div>
-                </div>
-            </section>
-            <!-- Section of the Password -->
+                           <div class="error" id="errE" *ngIf="group.get('UserName').touched && !this.clickP">
+                                Introduzca email correctamente.
+                                <p style="margin-top:-2px; margin-bottom:0;">Ejemplo: mlja4@gmail.com</p>
+                           </div>
 
-            <!-- Section of Sign Up -->
+                          
+                           
+                         
+                          
+                    </section>
+                <!-- </section>  class="Email" -->
+             
+                <!-- <section class="Password"> -->
+                    <section class="Password">
+                            <ion-label fixed color="dark" align-self-center>Password</ion-label>
+                            
+                            <div [formGroup]="group" class="user" id="input2">
+                                    <ion-input formControlName="Password"  id="password" [(ngModel)]="inputPassword"  class="passwordInput" maxlength="16" text-center placeholder="Password"
+                                        [type]="passwordType" (click)="errPassword()">
+                                    </ion-input>
+
+                                    <div class="eye-view-div" id="eye" (click)="tooglePassword($event.target)">
+                                            <img id="eye-closed-img" class="eye-view-img"
+                                                src="../assets/imgs/ionicons-svg-md-eye-off.svg">
+                                    </div>    
+                                   
+                            </div>
+
+                            <div class="error" *ngIf="group.get('Password').touched && group.get('Password').value==''">
+                                    <p style="margin-top:-1px; margin-bottom:0;">Introduzca el password correctamente.</p>
+                            </div>
+
+                    </section>     
+                <!-- </section>   Password -->
+                
+                <!-- <section> class="Forgot" [ message and botton ] -->
+                    <div class="Forgot">
+                            <a class="forgot" href="#">¿Has olvidado tu contraseña?</a>
+                            <button id="logButton" class="Sign-button" (click)="logInValidation()">  
+           
+                                <div class="arrow">
+                                    <div class="arrow-top"></div>
+                                    <div class="arrow-bottom"></div>
+                                  
+                                </div>
+                                <p class="sesion">Iniciar Sesión</p>
+           
+                            </button>
+                    </div>    
+                 <!-- <section class="Forgot""> -->   
+        </div> 
+    <!-- Mid of Page  -->
+
+    <!-- Section of Sign Up [ button and message ]-->
+       <div class="bottomScrn">
             <section class="SignUp_For_Free">
-                <p class="text">No tienes cuenta todavía?</p>
-                <div class="bottonAccount" padding>
-                    <div class="wrapper">
-                        <a href="#" class="effect-underline" text-center>Suscríbete Gratis!</a>
-                    </div>
-                </div>
+                    <p class="text">No tienes cuenta todavía?</p>
+                    <button class="bottonAccount" id="bottonAccount" padding (click)="susbcribe()">
+                        <a  class="effect-underline" text-center>Registrate Gratis!</a> 
+                    </button>
             </section>
-            <!-- Section of Sign Up -->
+       </div>
 
+
+    <!-- Bottom of the page -->
             <!-- Footer -->
             <div class="footer">
                 <div class="appName_back_to_up">
@@ -105,9 +135,7 @@
                     </div>
                 </div>
                 <div class="content_bottom">
-                    <div class="pepe">
-
-                    </div>
+                    
                 </div>
                 <div class="contact_icons">
                     <ion-icon id="twitter" name="logo-twitter"></ion-icon>
@@ -118,10 +146,9 @@
                     <ion-icon id="linkedin" name="logo-linkedin"></ion-icon>
                 </div>
             </div>
-            <!-- Footer -->
-        </div>
+           <!-- Footer -->
+    <!-- Bottom of the page -->
 
-        <!-- Bottom of the page -->
     </div>
 
 </ion-content>

@@ -1,14 +1,14 @@
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule, ErrorHandler,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
-import { SplashPage } from '../pages/splash/splash';
-
+import { AboutPage }      from '../pages/about/about';
+import { ContactPage }    from '../pages/contact/contact';
+import { HomePage }       from '../pages/home/home';
+import { TabsPage }       from '../pages/tabs/tabs';
+import { SplashPage }     from '../pages/splash/splash';
+import { SubscribePage}   from '../pages/subscribe/subscribe'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,12 +22,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    SplashPage
+    SplashPage,
+    SubscribePage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
@@ -35,11 +37,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    SplashPage
+    SplashPage,
+    SubscribePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    SubscribePage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
