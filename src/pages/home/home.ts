@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ViewController } from 'ionic-angular';
+import { NavController, ViewController, AlertController } from 'ionic-angular';
 import { FormControl, FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 import { timer } from 'rxjs/observable/timer';
@@ -23,25 +23,28 @@ export class HomePage {
   inputPassword: string="";
   inputEmail: string="";
  
-  group:    FormGroup;
+  group   : FormGroup;
   myGroup : FormGroup; 
-  form :    FormBuilder;
+  form    : FormBuilder;
 
-  nav : NavController; 
-
-  fp : boolean = false;
+  nav  : NavController; 
+  alert: AlertController;
+  fp   : boolean = false;
 
   clickE : boolean = true;
   clickP : boolean = true;
 
   flagPss : Boolean = true; 
-  flagEm:   Boolean = true;
+  flagEm  : Boolean = true;
 
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, 
                                              public formBuilder: FormBuilder, 
-                                             public app: App ) { 
+                                             public app: App,
+                                             public alertCtrl: AlertController
+                                             ) { 
      this.ngOnInit();
      this.nav = navCtrl;
+     this.alert = alertCtrl;
   }
 
    ngOnInit(){
@@ -59,6 +62,24 @@ export class HomePage {
      this.nav.push(SubscribePage);
    }
 
+   presentAlertCorrectLogin() {
+    let alert = this.alert.create({
+      title: 'Iniciar Sesión',
+      message: 'Se ha conectado correctamente',
+      buttons: ['De acuerdo']
+    });
+    alert.present();
+  }
+
+  presentAlertErrorLogin() {
+    let alert = this.alert.create({
+      title: 'Iniciar Sesión',
+      subTitle: 'No se ha podido establecer conexión',
+      message: 'Contraseña o Email incorrectos ',
+      buttons: ['De acuerdo']
+    });
+    alert.present();
+  }
 
    // -- Show and hide the password when eye icon is clicked -- //
    tooglePassword(eye_closed:any){ 
@@ -98,20 +119,24 @@ export class HomePage {
           
           document.getElementById("accessTo").style.display="inline-block";
           
-          timer(5000).subscribe(() => 
+          timer(4000).subscribe(() => 
           document.getElementById("accessTo").style.display="none");
           
-          // Si existe entonces bien pasa a siguiente pagina sino clear 
-          this.inputEmail="";
-          this.inputPassword = "";
-
-          this.clickE  = false;
-          this.clickP  = false;
-
-          this.flagPss = false; 
-          this.flagEm  = false;
-         
-        }
+          // Si existe entonces bien pasa a siguiente pagina sino clear
+          timer(4010).subscribe(() => this.presentAlertCorrectLogin());
+        
+        } else { 
+              this.presentAlertErrorLogin();
+              
+              this.inputEmail="";
+              this.inputPassword = "";
+    
+              this.clickE  = false;
+              this.clickP  = false;
+    
+              this.flagPss = false; 
+              this.flagEm  = false; 
+            }
 
       
     }
