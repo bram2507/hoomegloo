@@ -133,7 +133,7 @@ page-home {
         position: absolute;
         width: 90%;
         height: 35vh;
-        //background-color: #888 ;
+        background-color: transparent ;
         top: 0px;
         left: 0;
         transition: all 0.5s;
@@ -196,15 +196,17 @@ page-home {
       
     
     .option a{
+        width: 100%;
+        height: 35px;
         color:white;
-        top: 10px;
+        margin-top: 1px;
         left: 15px;
         text-decoration: none;
-        padding: 15px;
+        padding: 40px;
         transition: width 0.5s;
         display: block;
         position: relative;
-        padding: .75rem 1rem 1rem;
+        padding: .85rem 1rem 1rem;
         border-radius: 0px 10px 10px 10px;
         
         -webkit-transition: -webkit-transform .22s,box-shadow .22s;
@@ -215,6 +217,7 @@ page-home {
         user-select: none;
         
         box-shadow: 0 0 0 -.25rem rgba(0,0,0, 0.3);
+        
       }
       
      .option a:focus,  .option a:hover {
@@ -569,7 +572,7 @@ page-home {
       text-align: center;
      }
 
-    a{
+    button a{
     	color: #0ec254;
     	font-size: 16px;
   		text-decoration: none;
@@ -624,7 +627,7 @@ page-home {
     .contact_icons{
       margin-left: 18%;
       margin-right: auto;
-      
+      margin-top: -3%;
     }
 
     #twitter{

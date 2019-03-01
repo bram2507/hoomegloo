@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, ViewController } from 'ionic-angular';
-import { FormControl, FormBuilder, Validators, FormGroup, NgModel } from '@angular/forms';
+import { FormControl, FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 import { timer } from 'rxjs/observable/timer';
 import { SubscribePage } from '../subscribe/subscribe';

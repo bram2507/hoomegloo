@@ -8,7 +8,6 @@
 <ion-content>
    
     <div class="logScrn">
-
     <!-- Headder of the page [ Hamburger Menu and LogoText ] -->
         <div class="header" padding>
             <div class="appIcon">[ homegloo ]</div>
@@ -31,7 +30,6 @@
 
     <!-- Top of the page [ Email and Password -Log in ] -->
         <div class="topScrn" >
-          
                 <!-- Section of Wellcome text -->
                 <section class="textP">
                     <h2 align="text-center">Comenzar</h2>
@@ -66,11 +64,6 @@
                                 Introduzca email correctamente.
                                 <p style="margin-top:-2px; margin-bottom:0;">Ejemplo: mlja4@gmail.com</p>
                            </div>
-
-                          
-                           
-                         
-                          
                     </section>
                 <!-- </section>  class="Email" -->
              
@@ -86,14 +79,11 @@
                                     <div class="eye-view-div" id="eye" (click)="tooglePassword($event.target)">
                                             <img id="eye-closed-img" class="eye-view-img"
                                                 src="../assets/imgs/ionicons-svg-md-eye-off.svg">
-                                    </div>    
-                                   
+                                    </div>     
                             </div>
-
                             <div class="error" *ngIf="group.get('Password').touched && group.get('Password').value==''">
                                     <p style="margin-top:-1px; margin-bottom:0;">Introduzca el password correctamente.</p>
                             </div>
-
                     </section>     
                 <!-- </section>   Password -->
                 
@@ -101,14 +91,11 @@
                     <div class="Forgot">
                             <a class="forgot" href="#">¿Has olvidado tu contraseña?</a>
                             <button id="logButton" class="Sign-button" (click)="logInValidation()">  
-           
                                 <div class="arrow">
                                     <div class="arrow-top"></div>
                                     <div class="arrow-bottom"></div>
-                                  
                                 </div>
                                 <p class="sesion">Iniciar Sesión</p>
-           
                             </button>
                     </div>    
                  <!-- <section class="Forgot""> -->   
@@ -138,12 +125,12 @@
                     
                 </div>
                 <div class="contact_icons">
-                    <ion-icon id="twitter" name="logo-twitter"></ion-icon>
-                    <ion-icon id="google" name="logo-google"></ion-icon>
-                    <ion-icon id="github" name="logo-github"></ion-icon>
-                    <ion-icon id="youtube" name="logo-youtube"></ion-icon>
-                    <ion-icon id="pinterest" name="logo-pinterest"></ion-icon>
-                    <ion-icon id="linkedin" name="logo-linkedin"></ion-icon>
+                    <a href="#" style="text-decoration: none"><ion-icon id="twitter" name="logo-twitter"></ion-icon></a>
+                    <a href="#" style="text-decoration: none"><ion-icon id="google" name="logo-google"></ion-icon></a>
+                    <a href="#" style="text-decoration: none"><ion-icon id="github" name="logo-github"></ion-icon></a>
+                    <a href="#" style="text-decoration: none"><ion-icon id="youtube" name="logo-youtube"></ion-icon></a>
+                    <a href="#" style="text-decoration: none"><ion-icon id="pinterest" name="logo-pinterest"></ion-icon></a>
+                    <a href="#" style="text-decoration: none"><ion-icon id="linkedin" name="logo-linkedin"></ion-icon></a>
                 </div>
             </div>
            <!-- Footer -->
