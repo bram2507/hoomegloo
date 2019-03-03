@@ -22,6 +22,7 @@ import { timer } from 'rxjs/observable/timer';
 //#region SubcribePage Class  
 export class SubscribePage {
 
+  //#region Atributes
   passwordType: String = 'password';
   passwordType1: String = 'password';
   passwordIcon: any;
@@ -32,11 +33,11 @@ export class SubscribePage {
   showOpt: Boolean = true;
   userProfile : Profile;
 
-  inputName     : String = null;
-  inputEmail    : String = null;
-  inputPassword : String = null;
-  inputcpassword: String = null;
-  inputOcupation: String = null;
+  inputName     : string = null;
+  inputEmail    : string = null;
+  inputPassword : string = null;
+  inputcpassword: string = null;
+  inputOcupation: string = null;
   inputAge      : number = null;
   inputCountry  : any = null;
 
@@ -45,12 +46,15 @@ export class SubscribePage {
   clickP : boolean = false;
   clickCP: boolean = false;
   clickN : boolean = false;
+  clickO : boolean = false;
   pss    : boolean = true;
+  //#endregion Atributes
 
+  //#region Constructor
   constructor(public navCtrl: NavController, public navParams: NavParams, 
                                              public viewCtrl: ViewController, 
                                              public formBuilder: FormBuilder,
-                                             private alertCtrl: AlertController
+                                             public alertCtrl: AlertController
                                             ) {
     this.nav = navCtrl;
     this.alert = alertCtrl;
@@ -58,8 +62,9 @@ export class SubscribePage {
     this.userProfile = new Profile();
     this.inputCountry = null;                                           
   }
+  //#endregion 
   
-
+  //#region Methods
   ngOnInit(){
     this.group = new FormGroup({
       Name      : new FormControl('',[Validators.required, Validators.maxLength(25)]),
@@ -67,11 +72,10 @@ export class SubscribePage {
       Password  : new FormControl('',[Validators.required, Validators.minLength(8),Validators.pattern(/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/)]),
       CPassword : new FormControl('',[Validators.required, Validators.minLength(6)]),
       Age       : new FormControl('',[Validators.required, Validators.maxLength(2)]), 
-      Gender    : new FormControl('',[Validators.required])
+      Gender    : new FormControl('',[Validators.required]),
+      Ocupation : new FormControl('',[Validators.required]), 
            
     })  
-
-    
   }
 
   presentAlertTermns() {
@@ -112,27 +116,25 @@ export class SubscribePage {
 
   presentPerfil(){
     
-      // alert('Nombre : '+this.userProfile.getName());
-      // alert('Email: '+this.userProfile.getEmail());
-      // alert(' Password: '+this.userProfile.getPassword());
-      // alert(' Sexo: '+this.userProfile.getGender());
-      // alert(' Edad: '+this.userProfile.getAge());
-      // alert('Pais: '+this.userProfile.getCountry());
-      // alert(' Ocupacion: '+this.userProfile.getOcupation());
+      //  alert(' Nombre : '+this.userProfile.getName());
+      //  alert(' Email: '+this.userProfile.getEmail());
+      //  alert(' Password: '+this.userProfile.getPassword());
+      //  alert(' Sexo: '+this.userProfile.getGender());
+      //  alert(' Edad: '+this.userProfile.getAge());
+      //  alert(' Pais: '+this.userProfile.getCountry());
+      //  alert(' Ocupacion: '+this.userProfile.getOcupation());
       
 
       document.getElementById("accesTo").style.display="inline-block";
       
-      
-
-      timer(5000).subscribe(() => 
+      timer(3000).subscribe(() => 
       document.getElementById("accesTo").style.display="none");
-      //Enviar los datos a la base de datos para crear perfil 
-      // U otra funcion 
 
-      timer(5000).subscribe(() => this.presentAlertNewUser());
+      timer(3100).subscribe(() => this.presentAlertNewUser());
 
-      timer(5100).subscribe(() => this.BackPage());
+      timer(3150).subscribe(() => this.BackPage());
+
+     
      
   }
   
@@ -161,9 +163,7 @@ export class SubscribePage {
      
    }
 
-  BackPage(){
-       this.nav.popTo(HomePage); 
-  }
+  BackPage(){ this.nav.popTo(HomePage); }
 
   inputForm(e){
 
@@ -200,6 +200,8 @@ export class SubscribePage {
 
     if (x.match("Name")){
 
+      let n =  this.inputName;
+
       if (this.group.get('Name').hasError('required') 
       || this.group.get('Name').value==""){
         
@@ -209,10 +211,9 @@ export class SubscribePage {
 
         document.getElementById("Form").style.height="5"+(++n)+"%";
        
-        timer(50).subscribe(() => this.inputForm("Name"));
+        timer(10).subscribe(() => this.inputForm("Name"));
 
       } else {
-            this.clickN = true;
 
             document.getElementById("FormName").style.border="solid 1.5px #70DA92";
 
@@ -221,8 +222,7 @@ export class SubscribePage {
             let err = document.getElementById("errN");
 
             if (err != null){ err.style.display='none'; }
-
-            this.userProfile.setName(this.inputName);
+ 
         }    
     }
 
@@ -240,7 +240,7 @@ export class SubscribePage {
 
           if (err != null){ err.style.display='inline-block'; }
 
-          timer(50).subscribe(() => this.inputForm("Email"));
+          timer(1000).subscribe(() => this.inputForm("Email"));
 
         } else {
               this.clickE = true;
@@ -253,14 +253,12 @@ export class SubscribePage {
 
               if (err != null){ err.style.display='none'; }
 
-              this.userProfile.setEmail(this.inputEmail);
           }    
     }
 
     if (x.match("Password")){
       
-      if (this.group.get('Password').hasError('required') || 
-      this.group.get('Password').hasError('pattern')){
+      if (this.group.get('Password').hasError('required') || this.group.get('Password').hasError('pattern')){
        
         this.clickP = false;
 
@@ -272,7 +270,7 @@ export class SubscribePage {
 
             if (err != null){ err.style.display='inline-block'; }
 
-            timer(50).subscribe(() => this.inputForm("Password"));
+            timer(1000).subscribe(() => this.inputForm("Password"));
 
       } else {
           this.clickP = true;
@@ -285,8 +283,7 @@ export class SubscribePage {
 
           if (err != null){ err.style.display='none'; }
         }
-
-        this.userProfile.setPassword(this.inputPassword);
+       
     }
 
     if (x.match("CPassword")){
@@ -303,7 +300,7 @@ export class SubscribePage {
 
             if (err != null){ err.style.display='inline-block'; }
 
-            timer(50).subscribe(() => this.inputForm("CPassword"));
+            timer(1000).subscribe(() => this.inputForm("CPassword"));
 
       } else {
           this.clickCP = true;
@@ -317,12 +314,6 @@ export class SubscribePage {
           if (err != null){ err.style.display='none'; }
         }
     }
-    
-    this.userProfile.setCountry(this.inputCountry);
-
-    this.userProfile.setAge(this.inputAge);
-
-    this.userProfile.setOcupation(this.inputOcupation);
 
   }
 
@@ -342,6 +333,15 @@ export class SubscribePage {
 
  confirmProfile(){
 
+    //Enviar los datos a la base de datos para crear perfil 
+    // U otra funcion 
+    this.userProfile.setName      (this.inputName);
+    this.userProfile.setEmail     (this.inputEmail);
+    this.userProfile.setPassword  (this.inputPassword);    
+    this.userProfile.setCountry   (this.inputCountry);
+    this.userProfile.setAge       (this.inputAge);
+    this.userProfile.setOcupation (this.inputOcupation);
+
     let element = <HTMLInputElement> document.getElementById("cbx");
 
     if (element.checked == false ) this.presentAlertTermns();
@@ -357,8 +357,7 @@ export class SubscribePage {
 
   hideShow(){
     var gndr;
-
-    
+ 
     if (this.showOpt){ 
         gndr =   HTMLCollection;   
 
@@ -390,6 +389,7 @@ export class SubscribePage {
          this.showOpt = true; 
       }
   }
+  //#endregion Methods
 
 }
 //#endregion

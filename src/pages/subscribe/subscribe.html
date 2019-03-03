@@ -39,8 +39,8 @@
               <ion-label class="label" fixed color="#999">Nombre</ion-label>
               <section>
                   <div [formGroup]="group" class="user" id="FormName">
-                      <ion-input formControlName="Name" id="name" [(ngModel)]="inputName" class="Input" type="text"
-                        maxlength="25" text-center placeholder="*Nombre" (click)="inputForm('Name')">
+                      <ion-input formControlName="Name" id="Name" [(ngModel)]="inputName" class="Input" type="text"
+                        maxlength="15" text-center placeholder="*Nombre" (click)="inputForm('Name')">
                       </ion-input>
                   </div>
                   <div class="error" id="errN" *ngIf="group.get('Name').touched && !this.clickN">
@@ -98,7 +98,7 @@
                     <section class="lineGA">
                         <div [formGroup]="group" class="userAge" id="FormAge">
                             <ion-input formControlName="Age" id="Age" [(ngModel)]="inputAge" class="Input" type="text"
-                              maxlength="25" text-center placeholder=" Edad" (click)="inputForm('Age')">
+                              maxlength="2" text-center placeholder=" Edad" (click)="inputForm('Age')">
                             </ion-input>
                         </div>
                     </section>
@@ -383,13 +383,9 @@
                       </label>
                       <p class="termns">Acepto los <a href="#" style="text-decoration:none;">términos y condiciones</a> del servicio y la <a href="#" style="text-decoration:none;">política de privacidad.</a></p>
                     </div>
-                   
-                    
-                   
-                                                                                                                                                </div>
-
+                  
+               </div>
             </div>
-
         </div>
         <div class="susbcribeMidScrn">
           <div class="profileImg">
