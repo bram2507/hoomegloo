@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { NavController, ViewController, AlertController } from 'ionic-angular';
+import { Component, ViewChild} from '@angular/core';
+import { NavController, ViewController, AlertController, Content } from 'ionic-angular';
 import { FormControl, FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { DOCUMENT } from '@angular/platform-browser';
 
 import { timer } from 'rxjs/observable/timer';
 import { SubscribePage } from '../subscribe/subscribe';
@@ -37,6 +38,8 @@ export class HomePage {
   flagPss : Boolean = true; 
   flagEm  : Boolean = true;
 
+  @ViewChild(Content) content: Content;
+
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, 
                                              public formBuilder: FormBuilder, 
                                              public app: App,
@@ -45,6 +48,10 @@ export class HomePage {
      this.ngOnInit();
      this.nav = navCtrl;
      this.alert = alertCtrl;
+  }
+
+  goTopAction(){
+    this.content.scrollToTop();
   }
 
    ngOnInit(){

@@ -1,5 +1,5 @@
-import { Component} from '@angular/core';
-import { IonicPage, ViewController ,NavController, NavParams, AlertController } from 'ionic-angular';
+import { Component, ViewChild} from '@angular/core';
+import { IonicPage, ViewController ,NavController, NavParams, AlertController, Content } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { FormControl, FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { timer } from 'rxjs/observable/timer';
@@ -48,6 +48,8 @@ export class SubscribePage {
   clickN : boolean = false;
   clickO : boolean = false;
   pss    : boolean = true;
+
+  @ViewChild(Content) content: Content;
   //#endregion Atributes
 
   //#region Constructor
@@ -65,6 +67,11 @@ export class SubscribePage {
   //#endregion 
   
   //#region Methods
+
+  goTopAction(){
+    this.content.scrollToTop();
+  }
+
   ngOnInit(){
     this.group = new FormGroup({
       Name      : new FormControl('',[Validators.required, Validators.maxLength(25)]),
@@ -138,7 +145,6 @@ export class SubscribePage {
      
   }
   
-
   clickF(){
     var g =  document.getElementsByClassName("textArea");
   
@@ -149,9 +155,9 @@ export class SubscribePage {
     this.hideShow();
 
    
-   }
+  }
 
-   clickM(){
+  clickM(){
      var g =  document.getElementsByClassName("textArea");
 
      g[0].innerHTML="<center>Masculino</center>";
@@ -161,7 +167,7 @@ export class SubscribePage {
      this.hideShow();
 
      
-   }
+  }
 
   BackPage(){ this.nav.popTo(HomePage); }
 
