@@ -206,7 +206,6 @@ export class SubscribePage {
 
     if (x.match("Name")){
 
-      let n =  this.inputName;
 
       if (this.group.get('Name').hasError('required') 
       || this.group.get('Name').value==""){
