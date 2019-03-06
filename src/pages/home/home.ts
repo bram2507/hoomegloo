@@ -1,7 +1,7 @@
 import { Component, ViewChild} from '@angular/core';
 import { NavController, ViewController, AlertController, Content } from 'ionic-angular';
 import { FormControl, FormBuilder, Validators, FormGroup } from '@angular/forms';
-//import { DOCUMENT } from '@angular/platform-browser';
+
 
 import { timer } from 'rxjs/observable/timer';
 import { SubscribePage } from '../subscribe/subscribe';
@@ -70,22 +70,33 @@ export class HomePage {
    }
 
    presentAlertCorrectLogin() {
+    /*
     let alert = this.alert.create({
       title: 'Iniciar Sesión',
       message: 'Se ha conectado correctamente',
       buttons: ['De acuerdo']
     });
-    alert.present();
+    alert.present();*/
+
+    // primero preguntar a la base de datos si existe el usuario 
+    // que hemos introducido
+    
+    document.getElementById("cLog").style.display="block";
+    
+    timer(2500).subscribe(() => document.getElementById("cLog").style.display="none");
   }
 
   presentAlertErrorLogin() {
-    let alert = this.alert.create({
-      title: 'Iniciar Sesión',
-      subTitle: 'No se ha podido establecer conexión',
-      message: 'Contraseña o Email incorrectos ',
-      buttons: ['De acuerdo']
-    });
-    alert.present();
+    // let alert = this.alert.create({
+    //   title: 'Iniciar Sesión',
+    //   subTitle: 'No se ha podido establecer conexión',
+    //   message: 'Contraseña o Email incorrectos ',
+    //   buttons: ['De acuerdo']
+    // });
+    // alert.present();
+    document.getElementById("iLog").style.display="block";
+    
+    timer(2500).subscribe(() => document.getElementById("iLog").style.display="none");
   }
 
    // -- Show and hide the password when eye icon is clicked -- //
@@ -126,14 +137,19 @@ export class HomePage {
           
           document.getElementById("accessTo").style.display="inline-block";
           
-          timer(4000).subscribe(() => 
+          timer(3000).subscribe(() => 
           document.getElementById("accessTo").style.display="none");
           
           // Si existe entonces bien pasa a siguiente pagina sino clear
-          timer(4010).subscribe(() => this.presentAlertCorrectLogin());
+          timer(3010).subscribe(() => this.presentAlertCorrectLogin());
         
         } else { 
-              this.presentAlertErrorLogin();
+              document.getElementById("accessTo").style.display="inline-block";
+
+              timer(3000).subscribe(() => 
+              document.getElementById("accessTo").style.display="none");
+
+              timer(3010).subscribe(() => this.presentAlertErrorLogin());
               
               this.inputEmail="";
               this.inputPassword = "";
