@@ -144,8 +144,6 @@ export class SubscribePage {
       
       timer(5000).subscribe(() => this.BackPage());
 
-     
-     
   }
   
   clickF(){

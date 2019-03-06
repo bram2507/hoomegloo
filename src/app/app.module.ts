@@ -7,7 +7,9 @@ import { MyApp } from './app.component';
 import { HomePage }       from '../pages/home/home';
 
 import { SplashPage }     from '../pages/splash/splash';
-import { SubscribePage}   from '../pages/subscribe/subscribe'
+import { SubscribePage}   from '../pages/subscribe/subscribe';
+
+import { MainPage } from '../pages/main/main';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,7 +21,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     SplashPage,
-    SubscribePage
+    SubscribePage,
+    MainPage
   ],
   imports: [
     BrowserModule,
@@ -31,12 +34,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     SplashPage,
-    SubscribePage
+    SubscribePage,
+    MainPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     SubscribePage,
+    MainPage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

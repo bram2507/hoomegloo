@@ -5,6 +5,7 @@ import { FormControl, FormBuilder, Validators, FormGroup } from '@angular/forms'
 
 import { timer } from 'rxjs/observable/timer';
 import { SubscribePage } from '../subscribe/subscribe';
+import { MainPage } from '../main/main';
 import { App } from 'ionic-angular';
 
 @Component({
