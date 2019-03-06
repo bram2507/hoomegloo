@@ -13,8 +13,8 @@
     <allow-intent href="geo:*" />
     <preference name="FadeSplashScreenDuration" value="30" />
     <preference name="SplashScreenDelay" value="1000" />
-    <preference name="AutoHideSplashScreen" value="false" /> <!-- Set true to auto hide the splash screen : initial config -->
-    <preference name="FadeSplashScreen" value="false" />     <!-- Set true to auto hide the splash screen : initial config -->
+    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="FadeSplashScreen" value="false" />
     <preference name="ShowSplashScreen" value="true" />
     <preference name="ShowSplashScreenSpinner" value="false" />
     <platform name="android">
@@ -79,7 +79,7 @@
     <plugin name="cordova-plugin-device" spec="2.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="^3.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
+    <plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
     <engine name="android" spec="~7.1.4" />
     <engine name="ios" spec="~4.5.5" />
-    <plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
 </widget>

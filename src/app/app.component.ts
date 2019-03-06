@@ -5,11 +5,11 @@ import { Platform,  ModalController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { SplashPage } from '../pages/splash/splash';
+//import { SplashPage } from '../pages/splash/splash';
 
 import { HomePage } from '../pages/home/home';
 
-import { timer } from 'rxjs/observable/timer';
+//import { timer } from 'rxjs/observable/timer';
 
 @Component({
   templateUrl: 'app.html'

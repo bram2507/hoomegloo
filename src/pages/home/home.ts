@@ -1,7 +1,7 @@
 import { Component, ViewChild} from '@angular/core';
 import { NavController, ViewController, AlertController, Content } from 'ionic-angular';
 import { FormControl, FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { DOCUMENT } from '@angular/platform-browser';
+//import { DOCUMENT } from '@angular/platform-browser';
 
 import { timer } from 'rxjs/observable/timer';
 import { SubscribePage } from '../subscribe/subscribe';

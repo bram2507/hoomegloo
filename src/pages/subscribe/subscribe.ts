@@ -139,6 +139,13 @@ export class SubscribePage {
 
       timer(3100).subscribe(() => this.presentAlertNewUser());
 
+      this.userProfile.setName(null);
+      this.userProfile.setOcupation(null);
+      this.userProfile.setPassword(null);
+      this.userProfile.setAge(null);
+      this.userProfile.setCountry(null);
+      this.userProfile.setEmail(null);
+      
       timer(3150).subscribe(() => this.BackPage());
 
      
@@ -207,18 +214,22 @@ export class SubscribePage {
     if (x.match("Name")){
 
 
-      if (this.group.get('Name').hasError('required') 
-      || this.group.get('Name').value==""){
+      if (this.group.get('Name').hasError('required') && this.group.get('Name').value==""){
         
         this.clickN = false;
 
         document.getElementById("FormName").style.border="solid 1.5px #F52847";
 
         document.getElementById("Form").style.height="5"+(++n)+"%";
+
+        let err = document.getElementById("errN");
+
+        if (err != null){ err.style.display='inline-block'; }
        
-        timer(10).subscribe(() => this.inputForm("Name"));
+        timer(1000).subscribe(() => this.inputForm("Name"));
 
       } else {
+            this.clickN = true;
 
             document.getElementById("FormName").style.border="solid 1.5px #70DA92";
 
