@@ -113,31 +113,27 @@ export class SubscribePage {
   }
 
   presentAlertNewUser(){
-    let alert = this.alert.create({
-      title: 'Perfil',
-      message: 'Tu cuenta se ha creado correctamente',
-      buttons: ['De acuerdo']
-    });
-    alert.present();
+    // let alert = this.alert.create({
+    //   title: 'Perfil',
+    //   message: 'Tu cuenta se ha creado correctamente',
+    //   buttons: ['De acuerdo']
+    // });
+    // alert.present();
+    // enviar los datos a la base de datos relacional en SQL 
+    
+    document.getElementById("CLog").style.display="block";
+
+    timer(3000).subscribe(() => document.getElementById("CLog").style.display="none");
+    
   }
 
   presentPerfil(){
-    
-      //  alert(' Nombre : '+this.userProfile.getName());
-      //  alert(' Email: '+this.userProfile.getEmail());
-      //  alert(' Password: '+this.userProfile.getPassword());
-      //  alert(' Sexo: '+this.userProfile.getGender());
-      //  alert(' Edad: '+this.userProfile.getAge());
-      //  alert(' Pais: '+this.userProfile.getCountry());
-      //  alert(' Ocupacion: '+this.userProfile.getOcupation());
       
-
-      document.getElementById("accesTo").style.display="inline-block";
+    document.getElementById("accesTo").style.display="inline-block";
       
-      timer(3000).subscribe(() => 
-      document.getElementById("accesTo").style.display="none");
+    timer(2000).subscribe(() => document.getElementById("accesTo").style.display="none");
 
-      timer(3100).subscribe(() => this.presentAlertNewUser());
+    timer(2010).subscribe(() => this.presentAlertNewUser());
 
       this.userProfile.setName(null);
       this.userProfile.setOcupation(null);
@@ -146,7 +142,7 @@ export class SubscribePage {
       this.userProfile.setCountry(null);
       this.userProfile.setEmail(null);
       
-      timer(3150).subscribe(() => this.BackPage());
+      timer(5000).subscribe(() => this.BackPage());
 
      
      

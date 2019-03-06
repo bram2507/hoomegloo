@@ -50,9 +50,9 @@ export class HomePage {
      this.alert = alertCtrl;
   }
 
-  goTopAction(){
-    this.content.scrollToTop();
-  }
+   goTopAction(){
+     this.content.scrollToTop();
+   }
 
    ngOnInit(){
     this.group = new FormGroup({
@@ -61,22 +61,13 @@ export class HomePage {
     })
     
   
-  }
+   }
    
-  
-
    susbcribe(){
      this.nav.push(SubscribePage);
    }
 
    presentAlertCorrectLogin() {
-    /*
-    let alert = this.alert.create({
-      title: 'Iniciar Sesión',
-      message: 'Se ha conectado correctamente',
-      buttons: ['De acuerdo']
-    });
-    alert.present();*/
 
     // primero preguntar a la base de datos si existe el usuario 
     // que hemos introducido
@@ -84,20 +75,14 @@ export class HomePage {
     document.getElementById("cLog").style.display="block";
     
     timer(2500).subscribe(() => document.getElementById("cLog").style.display="none");
-  }
+   }
 
-  presentAlertErrorLogin() {
-    // let alert = this.alert.create({
-    //   title: 'Iniciar Sesión',
-    //   subTitle: 'No se ha podido establecer conexión',
-    //   message: 'Contraseña o Email incorrectos ',
-    //   buttons: ['De acuerdo']
-    // });
-    // alert.present();
+   presentAlertErrorLogin() {
+ 
     document.getElementById("iLog").style.display="block";
     
     timer(2500).subscribe(() => document.getElementById("iLog").style.display="none");
-  }
+   }
 
    // -- Show and hide the password when eye icon is clicked -- //
    tooglePassword(eye_closed:any){ 
@@ -127,7 +112,7 @@ export class HomePage {
    }
    
    // -- Load the data base looking for email and password -- // 
-     logInValidation(){
+   logInValidation(){
         
         if (this.group.get('Password').value == "") this.flagPss= false; 
     
@@ -162,10 +147,10 @@ export class HomePage {
             }
 
       
-    }
+   }
 
   
-    errEmail( ){
+   errEmail( ){
       if (this.clickP == true){
         
         document.getElementById("input1").style.border="solid 1.5px #70DA92";
@@ -203,9 +188,9 @@ export class HomePage {
               err.style.display='none';
             }
         }
-    }
-  
-    errPassword( ){
+   }
+ 
+   errPassword( ){
       
       if (this.clickE == true){
         document.getElementById("input2").style.border="solid 1.5px #70DA92";
@@ -224,7 +209,7 @@ export class HomePage {
       } else { document.getElementById("input2").style.border="solid 1.5px #70DA92"; 
                this.clickE == true;
         }
-    }
+   }
   
 }
 
