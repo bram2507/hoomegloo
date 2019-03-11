@@ -25,17 +25,17 @@ export class SplashPage {
   ionViewDidEnter() {
 
     //this.splashScreen.hide();  //coment to show splash 
-    // setTimeout(() => {
-    //   this.viewCtrl.dismiss();
-    // }, 7000); // change to 
+    setTimeout(() => {
+      this.viewCtrl.dismiss();
+    }, 4000); // change to 
 
   
   }
 
   // -- Comment to hide splash screen  -- // 
    
-  // ionViewDidLoad() {
-  //   console.log('ionViewDidLoad SplashPage');
-  // }
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad SplashPage');
+  }
 
 }

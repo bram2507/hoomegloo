@@ -9,7 +9,7 @@ import { HomePage }       from '../pages/home/home';
 import { SplashPage }     from '../pages/splash/splash';
 import { SubscribePage}   from '../pages/subscribe/subscribe';
 
-import { MainPage } from '../pages/main/main';
+import { MainPage } from '../pages/main/mainT';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';

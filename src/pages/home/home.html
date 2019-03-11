@@ -4,133 +4,142 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 </head>
+
 <body>
-<ion-content>
-   
-    <div class="logScrn">
-    <!-- Headder of the page [ Hamburger Menu and LogoText ] -->
-        <div class="header" padding>
-            <div class="appIcon">[ homegloo ]</div>
-            <div class="menuIcon">
-                    <input type="checkbox" id="hamburger" (click)="hamburgerMenu($event.target)"/>
+    <ion-content>
+
+        <div class="logScrn">
+            <!-- Headder of the page [ Hamburger Menu and LogoText ] -->
+            <div class="header" padding>
+                <div class="appIcon">[ homegloo ]</div>
+                <div class="menuIcon">
+                    <input type="checkbox" id="hamburger" (click)="hamburgerMenu($event.target)" />
                     <label class="menuicon" for="hamburger">
                         <span id="spn"></span>
-                    </label>      
+                    </label>
+                </div>
             </div>
-        </div>
-    <!-- Headder of the page -->
+            <!-- Headder of the page -->
 
-    <!-- Acess granted or not to  the home Initial Page  -->
-    <div id="accessTo" class="acess">
-       <div class="spinner">
-         <div class="double-bounce1"></div>
-         <div class="double-bounce2"></div>
-       </div>
-    </div>
+            <!-- Acess granted or not to  the home Initial Page  -->
+            <div id="accessTo" class="acess">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
 
-    <div id="cLog" class="correctIcon">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
-            <circle class="path circle" fill="none" stroke="white" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
-            <polyline class="path check" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
-        </svg>
-        <p class="success">Acceso Concedido!</p>
-    </div>
+            <div id="cLog" class="correctIcon">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                    <circle class="path circle" fill="none" stroke="white" stroke-width="6" stroke-miterlimit="10"
+                        cx="65.1" cy="65.1" r="62.1" />
+                    <polyline class="path check" fill="none" stroke="white" stroke-width="6" stroke-linecap="round"
+                        stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+                </svg>
+                <p class="success">Acceso Concedido!</p>
+            </div>
 
-    <div id="iLog" class="incorrectIcon">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
-                <circle class="path circle" fill="none" stroke="#F52847" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
-                <line class="path line" fill="none" stroke="#F52847" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3"/>
-                <line class="path line" fill="none" stroke="#F52847" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="95.8" y1="38" x2="34.4" y2="92.2"/>
-            </svg>
-            <p class="error">Acceso Denegado</p>              
-    </div>
+            <div id="iLog" class="incorrectIcon">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                    <circle class="path circle" fill="none" stroke="#F52847" stroke-width="6" stroke-miterlimit="10"
+                        cx="65.1" cy="65.1" r="62.1" />
+                    <line class="path line" fill="none" stroke="#F52847" stroke-width="6" stroke-linecap="round"
+                        stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3" />
+                    <line class="path line" fill="none" stroke="#F52847" stroke-width="6" stroke-linecap="round"
+                        stroke-miterlimit="10" x1="95.8" y1="38" x2="34.4" y2="92.2" />
+                </svg>
+                <p class="error">Acceso Denegado</p>
+            </div>
 
-    <!-- Top of the page [ Email and Password -Log in ] -->
-        <div class="topScrn" >
+            <!-- Top of the page [ Email and Password -Log in ] -->
+            <div class="topScrn">
                 <!-- Section of Wellcome text -->
                 <section class="textP">
                     <h1 align="text-center">Comenzar</h1>
-                    <h6 align="text-center">Inicia sesión en Homegloo</h6>     
+                    <h6 align="text-center">Inicia sesión en Homegloo</h6>
                 </section>
                 <!-- Section of Wellcome text -->
 
                 <!-- Menu transition when hamburguer is clicked -->
-                <nav id="nav" class="option"> 
+                <nav id="nav" class="option">
                     <a href="#">Acerca de Homegloo</a>
                     <a href="#">Cambiar Email</a>
                     <a href="#">Cambiar Contraseña</a>
-                    <a href="#">Contacto</a>  
-                </nav>     
+                    <a href="#">Contacto</a>
+                </nav>
                 <!-- Menu transition when hamburguer is clicked -->
-        </div>
-    <!-- Top of the page -->  
+            </div>
+            <!-- Top of the page -->
 
-    <!-- Mid of Page  -->
-        <div class="MidScrn" id="body">
+            <!-- Mid of Page  -->
+            <div class="MidScrn" id="body">
                 <!-- <section> class="Email"> -->
-                    <section class="Email" >
-                            <ion-label fixed color="dark">Email</ion-label>
-                            
-                            <div [formGroup]="group" class="user" id="input1">
+                <section class="Email">
+                    <ion-label fixed color="dark">Email</ion-label>
 
-                                <ion-input formControlName="UserName" email="true" id="email" [(ngModel)]="inputEmail" class="emailInput" type="text" maxlength="25" text-center placeholder="Email" (click)="errEmail()">
-                                </ion-input>
-                            </div>
+                    <div [formGroup]="group" class="user" id="input1">
 
-                           <div class="error" id="errE" *ngIf="group.get('UserName').touched && !this.clickP">
-                                Introduzca email correctamente.
-                                <p style="margin-top:-2px; margin-bottom:0;">Ejemplo: mlja4@gmail.com</p>
-                           </div>
-                    </section>
+                        <ion-input formControlName="UserName" email="true" id="email" [(ngModel)]="inputEmail"
+                            class="emailInput" type="text" maxlength="25" text-center placeholder="Email"
+                            (click)="errEmail()">
+                        </ion-input>
+                    </div>
+
+                    <div class="error" id="errE" *ngIf="group.get('UserName').touched && !this.clickP">
+                        Introduzca email correctamente.
+                        <p style="margin-top:-2px; margin-bottom:0;">Ejemplo: mlja4@gmail.com</p>
+                    </div>
+                </section>
                 <!-- </section>  class="Email" -->
-             
+
                 <!-- <section class="Password"> -->
-                    <section class="Password">
-                            <ion-label fixed color="dark" align-self-center>Password</ion-label>
-                            
-                            <div [formGroup]="group" class="user" id="input2">
-                                    <ion-input formControlName="Password"  id="password" [(ngModel)]="inputPassword"  class="passwordInput" maxlength="16" text-center placeholder="Password"
-                                        [type]="passwordType" (click)="errPassword()">
-                                    </ion-input>
+                <section class="Password">
+                    <ion-label fixed color="dark" align-self-center>Password</ion-label>
 
-                                    <div class="eye-view-div" id="eye" (click)="tooglePassword($event.target)">
-                                            <img id="eye-closed-img" class="eye-view-img"
-                                                src="../assets/imgs/ionicons-svg-md-eye-off.svg">
-                                    </div>     
-                            </div>
-                            <div class="error" *ngIf="group.get('Password').touched && group.get('Password').value==''">
-                                    <p style="margin-top:-1px; margin-bottom:0;">Introduzca el password correctamente.</p>
-                            </div>
-                    </section>     
+                    <div [formGroup]="group" class="user" id="input2">
+                        <ion-input formControlName="Password" id="password" [(ngModel)]="inputPassword"
+                            class="passwordInput" maxlength="16" text-center placeholder="Password"
+                            [type]="passwordType" (click)="errPassword()">
+                        </ion-input>
+
+                        <div class="eye-view-div" id="eye" (click)="tooglePassword($event.target)">
+                            <img id="eye-closed-img" class="eye-view-img"
+                                src="../assets/imgs/ionicons-svg-md-eye-off.svg">
+                        </div>
+                    </div>
+                    <div class="error" *ngIf="group.get('Password').touched && group.get('Password').value==''">
+                        <p style="margin-top:-1px; margin-bottom:0;">Introduzca el password correctamente.</p>
+                    </div>
+                </section>
                 <!-- </section>   Password -->
-                
-                <!-- <section> class="Forgot" [ message and botton ] -->
-                    <div class="Forgot">
-                            <a class="forgot" href="#">¿Has olvidado tu contraseña?</a>
-                            <button id="logButton" class="Sign-button" (click)="logInValidation()">  
-                                <div class="arrow">
-                                    <div class="arrow-top"></div>
-                                    <div class="arrow-bottom"></div>
-                                </div>
-                                <p class="sesion">Iniciar Sesión</p>
-                            </button>
-                    </div>    
-                 <!-- <section class="Forgot""> -->   
-        </div> 
-    <!-- Mid of Page  -->
 
-    <!-- Section of Sign Up [ button and message ]-->
-       <div class="bottomScrn">
-            <section class="SignUp_For_Free">
+                <!-- <section> class="Forgot" [ message and botton ] -->
+                <div class="Forgot">
+                    <a class="forgot" href="#">¿Has olvidado tu contraseña?</a>
+                    <button id="logButton" class="Sign-button" (click)="logInValidation()">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <p class="sesion">Iniciar Sesión</p>
+                    </button>
+                </div>
+                <!-- <section class="Forgot""> -->
+            </div>
+            <!-- Mid of Page  -->
+
+            <!-- Section of Sign Up [ button and message ]-->
+            <div class="bottomScrn">
+                <section class="SignUp_For_Free">
                     <p class="text">No tienes cuenta todavía?</p>
                     <button class="bottonAccount" id="bottonAccount" padding (click)="susbcribe()">
-                        <a  class="effect-underline" text-center>Registrate Gratis!</a> 
+                        <a class="effect-underline" text-center>Registrate Gratis!</a>
                     </button>
-            </section>
-       </div>
+                </section>
+            </div>
 
 
-    <!-- Bottom of the page -->
+            <!-- Bottom of the page -->
             <!-- Footer -->
             <div class="footer">
                 <div class="appName_back_to_up">
@@ -138,28 +147,43 @@
                         <p class="textApp">[ homegloo ]</p>
                         <div id="goTopB" (click)="goTopAction()">
                             <ion-fab>
-                                <ion-fab-button  class="goTopButtom" ion-fab background-activated="#F52847" background-focused="#F52847"><ion-icon name="arrow-dropup-circle"></ion-icon></ion-fab-button>
-                              </ion-fab>
+                                <ion-fab-button class="goTopButtom" ion-fab background-activated="#F52847"
+                                    background-focused="#F52847">
+                                    <ion-icon name="arrow-dropup-circle"></ion-icon>
+                                </ion-fab-button>
+                            </ion-fab>
                         </div>
                     </div>
-                  
+
                 </div>
                 <div class="content_bottom">
-                    
+
                 </div>
                 <div class="contact_icons">
-                    <a href="#" style="text-decoration: none"><ion-icon id="twitter" name="logo-twitter"></ion-icon></a>
-                    <a href="#" style="text-decoration: none"><ion-icon id="google" name="logo-google"></ion-icon></a>
-                    <a href="#" style="text-decoration: none"><ion-icon id="github" name="logo-github"></ion-icon></a>
-                    <a href="#" style="text-decoration: none"><ion-icon id="youtube" name="logo-youtube"></ion-icon></a>
-                    <a href="#" style="text-decoration: none"><ion-icon id="pinterest" name="logo-pinterest"></ion-icon></a>
-                    <a href="#" style="text-decoration: none"><ion-icon id="linkedin" name="logo-linkedin"></ion-icon></a>
+                    <a href="#" style="text-decoration: none">
+                        <ion-icon id="twitter" name="logo-twitter"></ion-icon>
+                    </a>
+                    <a href="#" style="text-decoration: none">
+                        <ion-icon id="google" name="logo-google"></ion-icon>
+                    </a>
+                    <a href="#" style="text-decoration: none">
+                        <ion-icon id="github" name="logo-github"></ion-icon>
+                    </a>
+                    <a href="#" style="text-decoration: none">
+                        <ion-icon id="youtube" name="logo-youtube"></ion-icon>
+                    </a>
+                    <a href="#" style="text-decoration: none">
+                        <ion-icon id="pinterest" name="logo-pinterest"></ion-icon>
+                    </a>
+                    <a href="#" style="text-decoration: none">
+                        <ion-icon id="linkedin" name="logo-linkedin"></ion-icon>
+                    </a>
                 </div>
             </div>
-           <!-- Footer -->
-    <!-- Bottom of the page -->
+            <!-- Footer -->
+            <!-- Bottom of the page -->
 
-    </div>
+        </div>
 
-</ion-content>
+    </ion-content>
 </body>

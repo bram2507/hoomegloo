@@ -1,5 +1,6 @@
 {
-  "name": "myApp",
+  "name": "Homegloo",
+  "version": "1.0.0",
   "integrations": {
     "cordova": {}
   },

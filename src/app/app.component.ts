@@ -5,17 +5,17 @@ import { Platform,  ModalController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-//import { SplashPage } from '../pages/splash/splash';
+import { SplashPage } from '../pages/splash/splash';
 
 import { HomePage } from '../pages/home/home';
 
-//import { timer } from 'rxjs/observable/timer';
+import { timer } from 'rxjs/observable/timer';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage; // -- Change to SplashPage to see splash screen first -- //
+  rootPage:any = SplashPage;//HomePage; // -- Change to SplashPage to see splash screen first -- //
   
   showSplash = true; // <-- show animation
 
@@ -28,10 +28,10 @@ export class MyApp {
       statusBar.styleDefault();
       //splashScreen.hide();  //-- Uncomment to hide the splash screen: intial config--//
       
-      // let splash = modalCtrl.create(SplashPage); //-- Uncomment to show the splash screen --//
-      // splash.present();                          //-- Uncomment to show the splash screen --// 
+      let splash = modalCtrl.create(SplashPage); //-- Uncomment to show the splash screen --//
+      splash.present();                          //-- Uncomment to show the splash screen --// 
        
-    //     timer(6000).subscribe(() => this.rootPage = HomePage) // <-- hide animation after 3s
+        timer(3000).subscribe(() => this.rootPage = HomePage) // <-- hide animation after 3s
       
     });
   }
