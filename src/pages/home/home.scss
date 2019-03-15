@@ -637,13 +637,13 @@ page-home {
     .goTopButtom{
       width: 35px;
       height: 35px;
-      margin-left: auto;
+      margin-left: 10px;
       margin-right: auto;
       text-align : center;
       color: #ffffbf;
       background-color: #F52847;
       //display:none;
-      position: fixed;
+      position: absolute;
     }
 //#region Correct or Incorret Login SVG
     .correctIcon{

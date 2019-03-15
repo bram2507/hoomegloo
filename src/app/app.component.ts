@@ -20,22 +20,24 @@ export class MyApp {
   showSplash = true; // <-- show animation
 
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, modalCtrl: ModalController) {
-
-    platform.ready().then(() => {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, 
+                                                        modalCtrl: ModalController) {
+    
+    
+     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      //splashScreen.hide();  //-- Uncomment to hide the splash screen: intial config--//
-      
-      let splash = modalCtrl.create(SplashPage); //-- Uncomment to show the splash screen --//
-      splash.present();                          //-- Uncomment to show the splash screen --// 
-       
-        timer(3000).subscribe(() => this.rootPage = HomePage) // <-- hide animation after 3s
-      
-    });
+       //statusBar.styleDefault();
+       //splashScreen.hide();  //-- Uncomment to hide the splash screen: intial config--//
+       // let splash = modalCtrl.create(SplashPage); //-- Uncomment to show the splash screen --//
+       // //                          //-- Uncomment to show the splash screen --// 
+       // setTimeout(() => {
+       //   splash.present();
+       // }, 1000); // change to 
+     
+        timer(5000).subscribe(() => this.rootPage = HomePage) }); // <-- hide animation after 3s 
   }
   
-  
-  
+
 }
+

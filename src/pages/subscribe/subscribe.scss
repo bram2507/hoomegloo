@@ -637,11 +637,12 @@ page-subscribe {
   .goTopButtom{
     width: 35px;
     height: 35px;
-    margin-left: auto;
+    margin-left: 10px;
     margin-right: auto;
     text-align : center;
     color: #ffffbf;
     background-color: #F52847;
+    position: absolute;
     //display:none;
   }
 

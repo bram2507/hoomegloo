@@ -15,19 +15,20 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   templateUrl: 'splash.html',
 })
 export class SplashPage {
-
+   public splash : SplashScreen;
   constructor(public navCtrl: NavController, public navParams: NavParams
                                            , public viewCtrl: ViewController
                                            , public splashScreen: SplashScreen) {
+             this.ionViewDidEnter();         
   }
   
   // -- Comment to hide splash screen  -- // 
   ionViewDidEnter() {
-
-    //this.splashScreen.hide();  //coment to show splash 
+    
+    this.splashScreen.hide();  //coment to show splash 
     setTimeout(() => {
       this.viewCtrl.dismiss();
-    }, 4000); // change to 
+    },4500); // change to 
 
   
   }
